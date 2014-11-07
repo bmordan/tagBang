@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: tagBang_production
-  username: tagBang
   password: <%= ENV['TAGBANG_DATABASE_PASSWORD'] %>
