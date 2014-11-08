@@ -26,4 +26,10 @@ describe 'tag bang. instagram for skaters' do
     expect(page).to have_content 'Log out'
   end
 
+  it 'when you\'ve had enough you can sign out' do
+    _login_testuser
+    click_link 'Log out'
+    expect(page).to have_content('Log in')
+  end
+
 end

@@ -1,5 +1,5 @@
 <h1>TagBang</h1>
 <nav>
-  <%= link_to 'Log out', destroy_user_session_path %>
+  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
   <%= current_user.id %>
 </nav>
