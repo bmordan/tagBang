@@ -21,4 +21,9 @@ describe 'tag bang. instagram for skaters' do
     expect(page).to have_content 'You have signed up successfully'
   end
 
+  it 'or just Log in if you already belong to TagBang' do
+    _login_testuser
+    expect(page).to have_content 'Log out'
+  end
+
 end

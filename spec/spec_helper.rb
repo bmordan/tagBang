@@ -50,3 +50,16 @@ def _signup_testuser
   fill_in('Password confirmation', with: 'password')
   click_button('Sign up')
 end
+
+def _login_testuser
+  _create_testuser
+  visit '/'
+  click_link 'Log in'
+  fill_in('Email', with: 'test@example.com')
+  fill_in('Password', with: 'password')
+  click_button 'Log in'
+end
+
+def _create_testuser
+  User.create(email: 'test@example.com', password: 'password',password_confirmation: 'password')
+end

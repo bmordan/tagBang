@@ -8,10 +8,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <header>
-  <h1>TagBang</h1>
+  <%if current_user%>
+    <%= render 'layouts/logout', current_user: current_user %>
+  <%else%>
+    <%= render 'layouts/login' %>
+  <%end%>
 </header>
+
 
 <main>
   <section>
