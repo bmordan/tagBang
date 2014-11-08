@@ -5,4 +5,9 @@ describe 'tag bang. instagram for skaters' do
     visit '/'
     expect(page).to have_content('TagBang')
   end
+
+  it 'you have to log in' do
+    visit '/'
+    expect(page).to have_link 'Log in'
+  end
 end
