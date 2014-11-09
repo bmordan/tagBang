@@ -1,1 +1,10 @@
-index
+
+<%if @posts.length > 0 %>
+  <% @posts.each do |photo| %>
+    <%= render 'photo_block', photo: photo %>
+  <%end%>
+<%else%>
+  Welcome to TagBang. Lets start!
+<%end%>
+
+<%= render 'upload' %>
