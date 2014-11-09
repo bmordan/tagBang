@@ -2,7 +2,11 @@
 <%if @posts.length > 0 %>
 
   <% @posts.each do |photo| %>
-    <%= render 'photo_block', photo: photo %>
+  <section>
+    <header><%if current_user%><%= current_user.handle %><%end%></header>
+    <main><%= render 'posts/photo_block', photo: photo %></main>
+    <footer><%= render 'comments/comment_form', photo:photo %></footer>
+  </section>
   <%end%>
 
 <%else%>

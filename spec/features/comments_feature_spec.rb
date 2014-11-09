@@ -1,13 +1,16 @@
 require 'spec_helper'
 
 describe 'social interaction is possible' do
-  it 'you can leave rude comments' do
+  it 'you can leave rude comments,' do
     _add_a_photo
     expect(page).to have_link 'comment'
   end
 
-  it 'you get a box' do
+  it 'if you want, or something more positive' do
     _add_a_photo
-    expect(page).to have_link 'comment'
+    click_link 'comment'
+    fill_in 'comment', with: 'test comment'
+    click_button 'Comment'
+    expect(page).to have_content 'test comment'
   end
 end
