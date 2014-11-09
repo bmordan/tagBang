@@ -22,9 +22,13 @@
     <h3 class="notice"><%= notice %></h3>
     <h3 class="alert"><%= alert %></h3>
   <section>
-
   <%= yield %>
 </main>
+<footer>
+  <%if current_user%>
+    <%= render 'posts/upload' %>
+  <%end%>
+</footer>
 
 </body>
 </html>
