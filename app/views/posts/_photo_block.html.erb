@@ -1,5 +1,5 @@
 <section>
-  <header><% puts photo.inspect %></header>
+  <header><%= current_user.handle %></header>
   <main><%= image_tag photo.image(:thumb) %></main>
   <footer><%= link_to 'X', post_path(photo), method: :delete%></footer>
 </section>
