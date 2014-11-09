@@ -62,3 +62,10 @@ end
 def _create_testuser
   User.create(email: 'test@example.com', password: 'password',password_confirmation: 'password')
 end
+
+def _add_a_photo
+    visit '/'
+  _login_testuser
+  attach_file('post[image]',File.join(Rails.root, '/spec/testImageFiles/13-percent.jpg'))
+  click_button 'Bang'
+end

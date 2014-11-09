@@ -32,4 +32,9 @@ describe 'tag bang. instagram for skaters' do
     expect(page).to have_content('Log in')
   end
 
+  it 'your handle is the first part of your email' do
+    _add_a_photo
+    expect(page).to have_content 'test'
+  end
+
 end

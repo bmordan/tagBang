@@ -29,5 +29,11 @@ describe 'the core of this site is the photos' do
     click_button 'Bang'
     expect(page.find('img')['src']).to have_content '13-percent.jpg'
   end
+
+  it 'if you don\'t like you photo you can delete it' do
+    _add_a_photo
+    click_link 'X'
+    expect(page).not_to have_content('X')
+  end
   
 end
