@@ -78,6 +78,12 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'fathomless-depths-4533.herokuapp.com' }
 
+  AWS::S3::DEFAULT_HOST = "s3-eu-west-1.amazonaws.com"
+
+  Paperclip.interpolates(:s3_eu_url) do |att, style|
+      "#{att.s3_protocol}://s3-eu-west-1.amazonaws.com/#{att.bucket_name}/#{att.path(style)}"
+  end
+
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {

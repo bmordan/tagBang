@@ -36,6 +36,12 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  AWS::S3::DEFAULT_HOST = "s3-eu-west-1.amazonaws.com"
+
+  Paperclip.interpolates(:s3_eu_url) do |att, style|
+      "#{att.s3_protocol}://s3-eu-west-1.amazonaws.com/#{att.bucket_name}/#{att.path(style)}"
+  end
+
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
