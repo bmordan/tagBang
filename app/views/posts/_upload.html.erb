@@ -1,5 +1,6 @@
 <section>
   <%= form_for Post.new, html: {multipart: true} do |f| %>
   <%= f.file_field :image %>
+  <%= f.submit 'Bang' %>
   <%end%>
 </section>
