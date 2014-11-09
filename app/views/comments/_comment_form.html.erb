@@ -1,9 +1,5 @@
-<nav>
-  <%= link_to 'X', post_path(photo), method: :delete%>
-  <%= link_to 'comment', '#' %>
-</nav>
-<%= form_for '#' do |f| %>
-  <%= f.hidden_field :post_id, value: photo.id %>
-  <%= f.text_area :comment, id: 'comment' %>
-  <%= f.submit 'Comment' %>
-<%end%>
+<form action="/posts/<%=photo.id%>/comments" method="post"> 
+  <input type="hidden" name="post_id" value="<%=photo.id%>">
+  <textarea name="comment"></textarea>
+  <input type="submit" value="Comment">
+</form>

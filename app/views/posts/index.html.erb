@@ -5,7 +5,10 @@
   <section>
     <header><%if current_user%><%= current_user.handle %><%end%></header>
     <main><%= render 'posts/photo_block', photo: photo %></main>
-    <footer><%= render 'comments/comment_form', photo:photo %></footer>
+    <footer>
+      <%= render 'comments/comments_display', photo:photo %>
+      <%= render 'comments/comment_form', photo:photo %>
+    </footer>
   </section>
   <%end%>
 

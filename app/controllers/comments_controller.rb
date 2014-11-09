@@ -1,17 +1,10 @@
 class CommentsController < ApplicationController
   
-  def new
-    @post = Post.find(params[:post_id])
-    @comment = Comment.new
-  end
+  skip_before_action :verify_authenticity_token, :only => [:create]
 
   def create
-    @post = Post.find(params[:post_id])
-    @post.comment.create(comments_params)
+    Comment.create(comment: params[:comment],post_id: params[:post_id])
     redirect_to posts_path
   end
 
-  def comments_params
-    params.require(:comment).permit(:post_id,:comment)
-  end
 end
