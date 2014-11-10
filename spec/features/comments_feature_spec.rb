@@ -15,7 +15,7 @@ describe 'social interaction is possible' do
   end
 
   it 'after all your username is going to be added' do
-
+    _add_a_comment
     expect(page).to have_content 'by test'   
   end
 
