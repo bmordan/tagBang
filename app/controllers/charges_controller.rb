@@ -1,7 +1,8 @@
 class ChargesController < ApplicationController
   
   def new
-
+    @price = params[:price]
+    @photo_id = params[:photo_id]
   end
 
   def create
