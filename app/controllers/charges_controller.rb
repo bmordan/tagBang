@@ -1,9 +1,7 @@
 class ChargesController < ApplicationController
   
   def new
-    puts "====STRIPE========"
-    puts Rails.configuration.stripe[:secret_key]
-    puts "====KEY=ABOVE====="
+
   end
 
   def create
