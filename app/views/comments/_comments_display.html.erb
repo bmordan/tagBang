@@ -3,9 +3,8 @@
   <%= link_to 'comment', '#' %>
 </nav>
 <%if photo.comments %>
-<%= puts photo.comments.inspect %>
   <% photo.comments.each do |comment|%>
   <artical><%= comment.comment %></artical>
-  <caption><%= comment.created_at %></caption>
+  <caption><%= comment.created_at %> by <%= comment.handle %></caption>
   <%end%>
 <%end%>

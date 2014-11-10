@@ -69,3 +69,10 @@ def _add_a_photo
   attach_file('post[image]',File.join(Rails.root, '/spec/testImageFiles/13-percent.jpg'))
   click_button 'Bang'
 end
+
+def _add_a_comment
+   _add_a_photo
+  click_link 'comment'
+  fill_in 'comment', with: 'test comment'
+  click_button 'Comment'  
+end
