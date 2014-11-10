@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+
+  resources :charges
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   root 'posts#index'

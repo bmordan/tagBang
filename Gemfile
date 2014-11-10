@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
