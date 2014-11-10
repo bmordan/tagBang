@@ -2,8 +2,8 @@
   <%= link_to 'X', post_path(photo), method: :delete%>
   <%= link_to 'comment', '#' %>
 </nav>
-
 <%if photo.comments %>
+<%= puts photo.comments.inspect %>
   <% photo.comments.each do |comment|%>
   <artical><%= comment.comment %></artical>
   <caption><%= comment.created_at %></caption>

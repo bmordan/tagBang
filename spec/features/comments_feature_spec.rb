@@ -13,4 +13,12 @@ describe 'social interaction is possible' do
     click_button 'Comment'
     expect(page).to have_content 'test comment'
   end
+
+  it 'after all your username is going to be added' do
+     _add_a_photo
+    click_link 'comment'
+    fill_in 'comment', with: 'test comment'
+    click_button 'Comment'
+    expect(page).to have_content 'tag by test'   
+  end
 end
