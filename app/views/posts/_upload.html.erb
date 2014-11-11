@@ -2,6 +2,7 @@
   <%= form_for Post.new, html: {multipart: true} do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.file_field :image %>
+    <%= f.number_field :price, id: 'price' %>
     <%= f.submit 'Bang' %>
   <%end%>
 </section>
