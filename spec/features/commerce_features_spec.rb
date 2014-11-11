@@ -24,6 +24,8 @@ describe 'Earn money from your photos' do
     _login_testuser
     attach_file('post[image]',File.join(Rails.root, '/spec/testImageFiles/13-percent.jpg'))
     fill_in 'price', with: '8'
-    click_button ''
+    click_button 'Bang'
+    click_link '£'
+    expect(page).to have_content '£8.00'
   end
 end

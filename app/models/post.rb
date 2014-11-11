@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   def nice_price
-    _price = sprintf('%.2f', self.price)
+    self.price.nil? ? _price = '0.00' : _price = sprintf('%.2f', self.price)
     "£#{_price}"
   end
 end
