@@ -5,6 +5,10 @@ class LikesController < ApplicationController
   end
 
   def create
-    puts params.inspect
+    @like = Like.create(like_params)
+  end
+
+  def like_params
+    params.require(:like).permit(:user_id,:post_id)
   end
 end
