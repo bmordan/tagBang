@@ -6,7 +6,7 @@
   <%else%>
     <%= link_to 'Free', '#' %>
   <%end%>
-  <%= link_to 'X', post_path(photo), method: :delete%>
+  <% if current_user %><%= link_to 'X', post_path(photo), method: :delete%><%end%>
 </nav>
 <%if photo.comments %>
   <% photo.comments.each do |comment|%>

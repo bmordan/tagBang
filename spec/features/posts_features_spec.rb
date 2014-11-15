@@ -35,5 +35,12 @@ describe 'the core of this site is the photos' do
     click_link 'X'
     expect(page).not_to have_content('X')
   end
+
+  it 'but only if you are logged in' do
+    visit '/'
+    _add_a_photo
+    click_link 'Log out'
+    expect(page).not_to have_content('X')
+  end
   
 end

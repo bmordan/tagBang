@@ -7,7 +7,7 @@ describe 'Like a photo' do
   end
 
   it 'there is a button for that' do
-    expect(page).to have_content('&#10084;')
+    expect(page).to have_content('❤')
   end
 
 end
