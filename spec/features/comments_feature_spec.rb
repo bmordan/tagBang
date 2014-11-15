@@ -19,7 +19,7 @@ describe 'social interaction is possible' do
     expect(page).to have_content 'by test'   
   end
 
-  it 'I know what you are thinking. but no you cant spam the site' do
+  xit 'I know what you are thinking. but no you cant spam the site' do
     
   end
 end

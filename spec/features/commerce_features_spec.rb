@@ -28,4 +28,12 @@ describe 'Earn money from your photos' do
     click_link '£'
     expect(page).to have_content '£8.00'
   end
+
+  it 'if a photo has no price you dont see the price button' do
+    visit '/'
+    _login_testuser
+    attach_file('post[image]',File.join(Rails.root, '/spec/testImageFiles/13-percent.jpg'))
+    click_button 'Bang'
+    expect(page).not_to have_content('£')   
+  end
 end

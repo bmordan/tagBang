@@ -1,7 +1,9 @@
 <nav>
   <%= link_to 'X', post_path(photo), method: :delete%>
   <%= link_to 'comment', '#' %>
-  <%= link_to '£', new_charge_path( photo_id: photo.id, price: photo.nice_price ) %>
+  <% if !photo.price.nil? %>
+    <%= link_to '£', new_charge_path( photo_id: photo.id, price: photo.nice_price ) %>
+  <%end%>
 </nav>
 <%if photo.comments %>
   <% photo.comments.each do |comment|%>

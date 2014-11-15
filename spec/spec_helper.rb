@@ -67,6 +67,7 @@ def _add_a_photo
     visit '/'
   _login_testuser
   attach_file('post[image]',File.join(Rails.root, '/spec/testImageFiles/13-percent.jpg'))
+  fill_in('price', with: '5')
   click_button 'Bang'
 end
 
