@@ -32,7 +32,6 @@ describe 'the core of this site is the photos' do
 
   it 'if you don\'t like your photo you can delete it' do
     _add_a_photo
-    save_and_open_page
     click_link 'X'
     expect(page).not_to have_content('X')
   end
