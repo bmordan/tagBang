@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 RSpec.describe Like, :type => :model do
 
   it 'adds a like' do
@@ -20,6 +19,12 @@ RSpec.describe Like, :type => :model do
     Like.create(user_id: 3,post_id: 3)
     Like.create(user_id: 3,post_id: 3)
     expect(Like.this_photo(3)).to eq(1)
+  end
+
+  it 'returns all the user handles' do
+    User.create(id: 1, email: 'test@example.com',password: 'password')
+    Like.create(user_id: 1,post_id: 1)
+    expect(Like.user_list(1)).to eq(['test'])
   end
 
 end
