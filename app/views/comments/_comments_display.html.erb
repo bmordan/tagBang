@@ -1,13 +1,19 @@
 <nav>
-  <%= link_to '&#10084;'.html_safe, '#' %>
-  <%= link_to 'comment', '#' %>
+  <%if current_user %>
+    <%= render 'comments/comments_likecomment', photo: photo %>
+  <%end%>
+
   <% if !photo.price.nil? %>
-    <%= link_to '£', new_charge_path( photo_id: photo.id, price: photo.nice_price ) %>
+    <%= link_to '&#163;'.html_safe, new_charge_path( photo_id: photo.id, price: photo.nice_price ) %>
   <%else%>
     <%= link_to 'Free', '#' %>
   <%end%>
-  <% if !current_user.nil? && current_user.id == photo.user_id%><%= link_to 'X', post_path(photo), method: :delete%><%end%>
+
+  <% if !current_user.nil? && current_user.id == photo.user_id%>
+    <%= link_to 'X', post_path(photo), method: :delete%>
+  <%end%>
 </nav>
+
 <%if photo.comments %>
   <% photo.comments.each do |comment|%>
   <artical><%= comment.comment %></artical>
