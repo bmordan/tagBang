@@ -64,7 +64,7 @@ def _create_testuser
 end
 
 def _add_a_photo
-    visit '/'
+  visit '/'
   _login_testuser
   attach_file('post[image]',File.join(Rails.root, '/spec/testImageFiles/13-percent.jpg'))
   fill_in('price', with: '5')
@@ -72,7 +72,7 @@ def _add_a_photo
 end
 
 def _add_a_comment
-   _add_a_photo
+  _add_a_photo
   click_link 'comment'
   fill_in 'comment', with: 'test comment'
   click_button 'Comment'  

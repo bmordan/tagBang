@@ -3,6 +3,8 @@
   <%= link_to 'comment', '#' %>
   <% if !photo.price.nil? %>
     <%= link_to '£', new_charge_path( photo_id: photo.id, price: photo.nice_price ) %>
+  <%else%>
+    <%= link_to 'Free', '#' %>
   <%end%>
 </nav>
 <%if photo.comments %>
