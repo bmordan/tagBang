@@ -39,6 +39,7 @@ group :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem 'codeclimate-test-reporter'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
